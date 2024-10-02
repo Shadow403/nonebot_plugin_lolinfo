@@ -63,4 +63,4 @@ nb plugin install nonebot-plugin-lolinfo
 
 `v0.2.0` 整体更新 本地合成图片
 
-
+`v0.2.1` 更新依赖
