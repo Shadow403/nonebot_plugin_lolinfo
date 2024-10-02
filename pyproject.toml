@@ -1,19 +1,16 @@
 [tool.poetry]
 name = "nonebot-plugin-lolinfo"
-version = "0.1.1"
-description = "以图片形式将 英雄联盟(LOL) 的各种数据进行互通"
+version = "0.2.0"
+description = "以图片形式将LOL的各种数据发送到QQ中"
 authors = ["Shadow403"]
-license = "LICENSE"
+license = "MIT"
 readme = "README.md"
 
 [tool.poetry.dependencies]
-python = ">=3.10"
-httpx = "^0.27.0"
-nonebot2 = "^2.3.3"
-
-[tool.poetry.group.dev.dependencies]
-httpx = "^0.27.0"
-nonebot2 = "^2.3.3"
+python = ">3.10"
+httpx = ">=0.27.0"
+nonebot2 = ">=2.3.0"
+nonebot-plugin-htmlrender = ">=0.3.0"
 
 [build-system]
 requires = ["poetry-core"]
