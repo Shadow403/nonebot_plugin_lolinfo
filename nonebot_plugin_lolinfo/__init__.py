@@ -11,7 +11,6 @@ __plugin_meta__ = PluginMetadata(
     type="application",
     homepage="https://github.com/Shadow403/nonebot_plugin_lolinfo",
     supported_adapters={"~onebot.v11"},
-    config=PluginConfig,
     extra={},
 )
 
