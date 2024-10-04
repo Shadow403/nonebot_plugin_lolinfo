@@ -26,6 +26,8 @@ _✨ 基于 [NoneBot2](https://github.com/nonebot/nonebot2) & [ShadowAPI](https:
 将英雄联盟的各种信息发送到QQ中 持续更新中 🚧
 
 ## 🎞 效果
+<details>
+<summary> 展开 </summary>
 
 `/hinfo 塞拉斯`
 ![](preview/塞拉斯_信息.png)
@@ -33,12 +35,14 @@ _✨ 基于 [NoneBot2](https://github.com/nonebot/nonebot2) & [ShadowAPI](https:
 `/rinfo 塞拉斯 上`
 ![](preview/塞拉斯_排位.png)
 
+</details>
+
 ## 💿 安装
-```pip
+```python
 pip install nonebot-plugin-lolinfo
 ```
 
-```nb
+```python
 nb plugin install nonebot-plugin-lolinfo
 ```
 
@@ -65,4 +69,6 @@ nb plugin install nonebot-plugin-lolinfo
 
 `v0.2.1` 更新依赖
 
-`v0.2.1` 更新 PluginConfig
+`v0.2.2` 更新 `PluginConfig`
+
+`v0.2.3` 更新 `PluginConfig` | 添加异步处理 `httpx.AsyncClient`

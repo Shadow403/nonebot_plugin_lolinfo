@@ -1,12 +1,12 @@
 import json
 import httpx
 from nonebot import logger
-from ..config import PluginConfig
+from ..config import config
 
-HTTPClient = httpx.Client(
+HTTPClient = httpx.AsyncClient(
         timeout=10,
         verify=False,
-        headers=PluginConfig.httpx_headers
+        headers=config.httpx_headers
     )
 
 class LOLAPI:
@@ -14,13 +14,13 @@ class LOLAPI:
     [https://api-dev.shadow403.cn/docs/LOL/](https://api-dev.shadow403.cn/docs/LOL/)
     """
     def __init__(self):
-        self.url = PluginConfig.api_url
+        self.url = config.api_url
 
     async def _get_Hinfo(self, HName: str):
         try:
             rURL = f"{self.url}/heroImg/{HName}?min=true"
             logger.info(f"开始获取数据 {rURL}")
-            rDict = json.loads(HTTPClient.get(rURL).text)
+            rDict = json.loads((await HTTPClient.get(rURL)).text)
             logger.success(f"获取数据成功 {rURL}")
             return rDict
         except Exception as e:
@@ -31,7 +31,7 @@ class LOLAPI:
         try:
             rURL = f"{self.url}/heroRank/{HName}?posi={SPosi}"
             logger.info(f"开始获取数据 {rURL}")
-            rDict = json.loads(HTTPClient.get(rURL).text)
+            rDict = json.loads((await HTTPClient.get(rURL)).text)
             logger.success(f"获取数据成功 {rURL}")
             return rDict
         except Exception as e:
