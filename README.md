@@ -25,7 +25,7 @@ _✨ 基于 [NoneBot2](https://github.com/nonebot/nonebot2) & [ShadowAPI](https:
 ## 📖 介绍
 将英雄联盟的各种信息发送到QQ中 持续更新中 🚧
 
-## 🎞 效果
+## 🎦 效果
 <details>
 <summary> 展开 </summary>
 
@@ -49,11 +49,17 @@ nb plugin install nonebot-plugin-lolinfo
 ## 🎁 使用
 `Tips:  支持模糊搜索 🔍`
 - /hinfo `<英雄名 | 英雄外号>`
-- /rinfo `<英雄名 | 英雄外号>` `<分路>`
+- /rinfo `<英雄名 | 英雄外号>` `<分路(可选)>`
 
+## 🛠️ 配置
+|配置名|数据类型|默认值|
+|-------------|-----------|-------------------------------------------------|
+|`lol_api_url`      |`str` |`https://api-dev.shadow403.cn/api/lol`          |
+|`lol_img_url`      |`str` |`https://game.gtimg.cn/images/lol/act/img/item` |
+|`lol_httpx_headers`|`dict`|`{"User-Agent": "nonebot_plugin_lolinfo"}`      |
+|`lol_httpx_timeout`|`int` |`40`                                            |
 
-
-## ❤ 感谢
+## 🍺 感谢
 - 图片制作 [`nonebot-plugin-htmlrender`](https://github.com/kexue-z/nonebot-plugin-htmlrender)
 
 <br>
@@ -61,14 +67,10 @@ nb plugin install nonebot-plugin-lolinfo
 <details>
 <summary> 日志 </summary>
 
-`v0.1.0` 发布此项目
-
-`v0.1.1` 修改 README.md
-
-`v0.2.0` 整体更新 本地合成图片
-
-`v0.2.1` 更新依赖
-
-`v0.2.2` 更新 `PluginConfig`
-
-`v0.2.3` 更新 `PluginConfig` | 添加异步处理 `httpx.AsyncClient`
+- `v0.1.0` 发布此项目
+- `v0.1.1` 修改 README.md
+- `v0.2.0` 整体更新 本地合成图片
+- `v0.2.1` 更新依赖
+- `v0.2.2` 更新 `PluginConfig`
+- `v0.2.3` 更新 `PluginConfig` | 添加异步处理 `httpx.AsyncClient`
+- `v0.2.4` 修复 `util_urlpath.py` 更新 `PluginConfig` | 添加超时配置 `httpx.timeout`

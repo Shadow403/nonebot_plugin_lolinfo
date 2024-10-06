@@ -1,4 +1,4 @@
-from ..config import PluginConfig
+from ..config import config
 
 def _f_parse_item(data: dict = None):
     _url = []
@@ -8,18 +8,17 @@ def _f_parse_item(data: dict = None):
     for i0 in range(_len0):
         _v0 = data[str(i0 + 1)].get("itemid")
         if "&" not in _v0:
-            _v1 = f"{PluginConfig.html_str}{PluginConfig.img_url}/{_v0}{PluginConfig.img_minetype}{PluginConfig.html_end}"
+            _v1 = f"{config.lol_html_str}{config.lol_img_url}/{_v0}{config.lol_img_minetype}{config.lol_html_end}"
             _url.append(_v1)
-        else:
-            _url0 = ""
-            _v0 = _v0.split("&")
-            _len1 = len(_v0)
-            if _len1 > 3:
-                _len1 = 3
-            for i1 in range(_len1):
-                _v1 = f"{PluginConfig.html_str}{PluginConfig.img_url}/{_v0[i1]}{PluginConfig.img_minetype}{PluginConfig.html_end}"
-                _url0 += _v1
-            _url.append(_url0)
+        _url0 = ""
+        _v0 = _v0.split("&")
+        _len1 = len(_v0)
+        if _len1 > 3:
+            _len1 = 3
+        for i1 in range(_len1):
+            _v1 = f"{config.lol_html_str}{config.lol_img_url}/{_v0[i1]}{config.lol_img_minetype}{config.lol_html_end}"
+            _url0 += _v1
+        _url.append(_url0)
     return _url
 
 def _f_parse_rune(data: dict = None):
@@ -29,7 +28,7 @@ def _f_parse_rune(data: dict = None):
     _rune_list2 = data["RUNE_DEATIL_LIST"]["2"]["1"]["perk"].split("&")
     _rune_list = _rune_list1 + _rune_list2
     for v0 in _rune_list:
-        v1 = f"{PluginConfig.html_str}{data["RUNE_ORIGIN_LIST"][v0]["icon"]}{PluginConfig.html_end}"
+        v1 = f"{config.lol_html_str}{data["RUNE_ORIGIN_LIST"][v0]["icon"]}{config.lol_html_end}"
         _url0.append(v1)
     for i in range(0, len(_url0), 9):
         v2 = ""
@@ -47,7 +46,7 @@ def _f_parse_spell(data: dict = None):
     for i0 in range(_len):
         v0 = _spell_list[str(i0 + 1)]["spellid"].split("&")
         for v1 in v0:
-            v0 = f"{PluginConfig.html_str}{data["SPELL_ORIGIN_LIST"][v1]["icon"]}{PluginConfig.html_end}"
+            v0 = f"{config.lol_html_str}{data["SPELL_ORIGIN_LIST"][v1]["icon"]}{config.lol_html_end}"
             _url0.append(v0)
     for i in range(0, len(_url0), 2):
         v2 = ""

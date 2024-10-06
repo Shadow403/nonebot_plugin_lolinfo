@@ -4,9 +4,9 @@ from nonebot import logger
 from ..config import config
 
 HTTPClient = httpx.AsyncClient(
-        timeout=10,
         verify=False,
-        headers=config.httpx_headers
+        timeout=config.lol_httpx_timeout,
+        headers=config.lol_httpx_headers
     )
 
 class LOLAPI:
@@ -14,7 +14,7 @@ class LOLAPI:
     [https://api-dev.shadow403.cn/docs/LOL/](https://api-dev.shadow403.cn/docs/LOL/)
     """
     def __init__(self):
-        self.url = config.api_url
+        self.url = config.lol_api_url
 
     async def _get_Hinfo(self, HName: str):
         try:
