@@ -28,4 +28,4 @@ async def heroInfo_handle(Initial: Message = CommandArg()):
     if rDict["code"] == 404:
         await ImgHeroInfo.finish(MessageSegment.image(f"{_PATH_}/images/_rinfo_notfound.png"))
     if rDict["code"] != 0:
-        await ImgHeroInfo.finish(MessageSegment.text(f"返回状态码 {rDict["code"]}\n信息: {rDict["message"]}"))
+        await ImgHeroInfo.finish(MessageSegment.text(f"返回状态码 {rDict['code']}\n信息: {rDict['message']}"))
