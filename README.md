@@ -53,7 +53,7 @@ nb plugin install nonebot-plugin-lolinfo
 
 ## 🛠️ 配置
 |配置名|数据类型|默认值|
-|-------------|-----------|-------------------------------------------------|
+|-------------------|------|------------------------------------------------|
 |`lol_api_url`      |`str` |`https://api-dev.shadow403.cn/api/lol`          |
 |`lol_img_url`      |`str` |`https://game.gtimg.cn/images/lol/act/img/item` |
 |`lol_httpx_headers`|`dict`|`{"User-Agent": "nonebot_plugin_lolinfo"}`      |
@@ -74,3 +74,4 @@ nb plugin install nonebot-plugin-lolinfo
 - `v0.2.2` 更新 `PluginConfig`
 - `v0.2.3` 更新 `PluginConfig` | 添加异步处理 `httpx.AsyncClient`
 - `v0.2.4` 修复 `util_urlpath.py` 更新 `PluginConfig` | 添加超时配置 `httpx.timeout`
+- `v0.2.5` 修复🐛 `SyntaxError` [`#2`](https://github.com/Shadow403/nonebot_plugin_lolinfo/issues/2)

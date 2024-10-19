@@ -23,12 +23,15 @@ async def heroRank_handle(Initial: Message = CommandArg()):
     else:
         rDict = await API._get_Rinfo(InfoList[0])
 
-    if rDict["code"] == 0:
+    rCode = rDict["code"]
+    rMesg = rDict["message"]
+
+    if rCode == 0:
         rImg = await _d_rinfo(rDict)
         await ImgHeroRank.finish(MessageSegment.image(rImg))
-    if rDict["code"] == 401:
+    if rCode == 401:
         await ImgHeroRank.finish(MessageSegment.text(f"API 请求错误\n{rDict}"))
-    if rDict["code"] == 404:
+    if rCode == 404:
         await ImgHeroRank.finish(MessageSegment.image(f"{_PATH_}/images/_rinfo_notfound.png"))
-    if rDict["code"] != 0:
-        await ImgHeroRank.finish(MessageSegment.text(f"返回状态码 {rDict["code"]}\n信息: {rDict["message"]}"))
+    if rCode != 0:
+        await ImgHeroRank.finish(MessageSegment.text(f"返回状态码 {rCode}\n信息: {rMesg}"))

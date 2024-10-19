@@ -13,60 +13,60 @@ async def _d_hinfo(rDict: dict):
 </head>
 <body>
     <div class="header">
-        <img src="{rDict["skins"]["sourceImg"]}" alt="">
-        <div class="hid">{rDict["hero"]["heroId"]}</div>
-        <div class="timestamp">{rDict["fileTime"]}</div>
+        <img src="{rDict['skins']['sourceImg']}" alt="">
+        <div class="hid">{rDict['hero']['heroId']}</div>
+        <div class="timestamp">{rDict['fileTime']}</div>
     </div>
     <div class="container">
         <div class="left-panel">
             <div class="hero-image">
-                <img src="{rDict["skins"]["loadingImg"]}" alt="">
+                <img src="{rDict['skins']['loadingImg']}" alt="">
             </div>
-            <div class="hero-name">{rDict["hero"]["name"]}</div>
-            <div class="hero-title">{rDict["hero"]["title"]}</div>
+            <div class="hero-name">{rDict['hero']['name']}</div>
+            <div class="hero-title">{rDict['hero']['title']}</div>
             <div class="hero-description">
-                {rDict["hero"]["shortBio"]}
+                {rDict['hero']['shortBio']}
             </div>
         </div>
         <div class="right-panel">
             <div class="skill">
                 <h3 class="skill-title">
-                    <img src="{rDict["spells"][1]["abilityIconPath"]}" alt=""> {rDict["spells"][1]["name"]}
+                    <img src="{rDict['spells'][1]['abilityIconPath']}" alt=""> {rDict['spells'][1]['name']}
                 </h3>
                 <p class="skill-description">
-                    {rDict["spells"][1]["description"].replace("\n", "")}
+                    {rDict['spells'][1]['description'].replace("\n", "")}
                 </p>
             </div>
             <div class="skill">
                 <h3 class="skill-title">
-                    <img src="{rDict["spells"][2]["abilityIconPath"]}" alt=""> {rDict["spells"][2]["name"]}
+                    <img src="{rDict['spells'][2]['abilityIconPath']}" alt=""> {rDict['spells'][2]['name']}
                 </h3>
                 <p class="skill-description">
-                    {rDict["spells"][2]["description"].replace("\n", "")}
+                    {rDict['spells'][2]['description'].replace("\n", "")}
                 </p>
             </div>
             <div class="skill">
                 <h3 class="skill-title">
-                    <img src="{rDict["spells"][4]["abilityIconPath"]}" alt=""> {rDict["spells"][4]["name"]}
+                    <img src="{rDict['spells'][4]['abilityIconPath']}" alt=""> {rDict['spells'][4]['name']}
                 </h3>
                 <p class="skill-description">
-                    {rDict["spells"][4]["description"].replace("\n", "")}
+                    {rDict['spells'][4]['description'].replace("\n", "")}
                 </p>
             </div>
             <div class="skill">
                 <h3 class="skill-title">
-                    <img src="{rDict["spells"][0]["abilityIconPath"]}" alt=""> {rDict["spells"][0]["name"]}
+                    <img src="{rDict['spells'][0]['abilityIconPath']}" alt=""> {rDict['spells'][0]['name']}
                 </h3>
                 <p class="skill-description">
-                    {rDict["spells"][0]["description"].replace("\n", "")}
+                    {rDict['spells'][0]['description'].replace("\n", "")}
                 </p>
             </div>
             <div class="skill">
                 <h3 class="skill-title">
-                    <img src="{rDict["spells"][3]["abilityIconPath"]}" alt=""> {rDict["spells"][3]["name"]}
+                    <img src="{rDict['spells'][3]['abilityIconPath']}" alt=""> {rDict['spells'][3]['name']}
                 </h3>
                 <p class="skill-description">
-                    {rDict["spells"][3]["description"].replace("\n", "")}
+                    {rDict['spells'][3]['description'].replace("\n", "")}
                 </p>
             </div>
         </div>
