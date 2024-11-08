@@ -1,7 +1,7 @@
-from nonebot import logger
+from nonebot import logger,require
 from nonebot.plugin import PluginMetadata,inherit_supported_adapters
 from .config import PluginConfig, _PLUGINVER_
-
+require("nonebot_plugin_saa")
 __plugin_meta__ = PluginMetadata(
     name="lolinfo",
     description="查询LOL各种信息🚧",
