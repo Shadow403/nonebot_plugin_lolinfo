@@ -1,8 +1,6 @@
-from .utils import *
-from .controllers import *
 from nonebot import logger
 from nonebot.plugin import PluginMetadata
-from .config import PluginConfig, config, _PLUGINVER_
+from .config import PluginConfig, _PLUGINVER_
 
 __plugin_meta__ = PluginMetadata(
     name="lolinfo",

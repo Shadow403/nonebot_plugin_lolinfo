@@ -1,19 +1,22 @@
 from .api import LOLAPI
 from ..config import _PATH_
-from nonebot import on_command
+from nonebot import on_command, require
 from nonebot.adapters import Message
 from nonebot.params import CommandArg
-from ..draw.draw_hinfo import _d_hinfo
+from ..render.draw_hinfo import _d_hinfo
 from nonebot.adapters.onebot.v11 import MessageSegment
+
+require("nonebot_plugin_saa")
+import nonebot_plugin_saa as saa
+
+
+from PIL import Image
+from io import BytesIO
 
 API = LOLAPI()
 
-ImgHeroInfo = on_command(
-        "/hinfo",
-        aliases={"/英雄信息"},
-        block=1,
-        priority=1
-    )
+ImgHeroInfo = on_command("hinfo", aliases={"英雄信息"}, block=True, priority=1)
+
 
 @ImgHeroInfo.handle()
 async def heroInfo_handle(Initial: Message = CommandArg()):
@@ -21,14 +24,18 @@ async def heroInfo_handle(Initial: Message = CommandArg()):
     rDict = await API._get_Hinfo(heroName)
 
     rCode = rDict["code"]
-    rMesg = rDict["message"]
+    rMsg = rDict["message"]
 
     if rCode == 0:
         rImg = await _d_hinfo(rDict)
-        await ImgHeroInfo.finish(MessageSegment.image(rImg))
+        img = Image.open(BytesIO(rImg))
+        img.show()
+        await saa.Image(rImg).finish()
     if rCode == 401:
         await ImgHeroInfo.finish(MessageSegment.text(f"API 请求错误\n{rDict}"))
     if rCode == 404:
-        await ImgHeroInfo.finish(MessageSegment.image(f"{_PATH_}/images/_rinfo_notfound.png"))
+        await saa.Image(f"{_PATH_}/templates/images/_rinfo_notfound.png").finish()
     if rCode != 0:
-        await ImgHeroInfo.finish(MessageSegment.text(f"返回状态码 {rCode}\n信息: {rMesg}"))
+        await ImgHeroInfo.finish(
+            MessageSegment.text(f"返回状态码 {rCode}\n信息: {rMsg}")
+        )

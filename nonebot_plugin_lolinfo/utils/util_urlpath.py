@@ -1,6 +1,7 @@
 from ..config import config
 
-def _f_parse_item(data: dict = None):
+
+def _f_parse_item(data: dict):
     _url = []
     _len0 = len(data)
     if _len0 > 3:
@@ -21,7 +22,8 @@ def _f_parse_item(data: dict = None):
         _url.append(_url0)
     return _url
 
-def _f_parse_rune(data: dict = None):
+
+def _f_parse_rune(data: dict):
     _url0 = []
     _url1 = []
     _rune_list1 = data["RUNE_DEATIL_LIST"]["1"]["1"]["perk"].split("&")
@@ -32,11 +34,12 @@ def _f_parse_rune(data: dict = None):
         _url0.append(v1)
     for i in range(0, len(_url0), 9):
         v2 = ""
-        v2 += "".join(_url0[i:i+9])
+        v2 += "".join(_url0[i : i + 9])
         _url1.append(v2)
     return _url1
 
-def _f_parse_spell(data: dict = None):
+
+def _f_parse_spell(data: dict):
     _url0 = []
     _url1 = []
     _spell_list = data["SPELL_EQUIP"]
@@ -50,11 +53,12 @@ def _f_parse_spell(data: dict = None):
             _url0.append(v0)
     for i in range(0, len(_url0), 2):
         v2 = ""
-        v2 += "".join(_url0[i:i+2])
+        v2 += "".join(_url0[i : i + 2])
         _url1.append(v2)
     return _url1
 
-def Func_parseDict(data: dict = None):
+
+def Func_parseDict(data: dict):
     _CE_ = data["R_DETAIL_DICT"]
 
     _CE_Boots = _f_parse_item(_CE_["R_EQUIP"]["BOOTS_EQUIP"])
@@ -63,12 +67,6 @@ def Func_parseDict(data: dict = None):
     _CE_rune = _f_parse_rune(_CE_["R_RUNE"])
     _CE_Spell = _f_parse_spell(_CE_["R_EQUIP"]["SPELL_INFO"])
 
-    _dict_list = [
-        _CE_Boots,
-        _CE_Core,
-        _CE_Out,
-        _CE_rune,
-        _CE_Spell
-    ]
+    _dict_list = [_CE_Boots, _CE_Core, _CE_Out, _CE_rune, _CE_Spell]
 
     return _dict_list
