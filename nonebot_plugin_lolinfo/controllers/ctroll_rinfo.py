@@ -1,11 +1,12 @@
 from .api import LOLAPI
 from ..config import _PATH_
-from nonebot import on_command
+from nonebot import on_command, require
 from nonebot.adapters import Message
 from nonebot.params import CommandArg
 from ..render.draw_rinfo import _d_rinfo
-from nonebot.adapters.onebot.v11 import MessageSegment
 
+require("nonebot_plugin_saa")
+import nonebot_plugin_saa as saa
 API = LOLAPI()
 
 ImgHeroRank = on_command("rinfo", aliases={"英雄排位"}, block=True, priority=1)
@@ -24,14 +25,10 @@ async def heroRank_handle(Initial: Message = CommandArg()):
 
     if rCode == 0:
         rImg = await _d_rinfo(rDict)
-        await ImgHeroRank.finish(MessageSegment.image(rImg))
+        await saa.Image(rImg).finish()
     if rCode == 401:
-        await ImgHeroRank.finish(MessageSegment.text(f"API 请求错误\n{rDict}"))
+        await saa.Text(f"API 请求错误\n{rDict}").finish()
     if rCode == 404:
-        await ImgHeroRank.finish(
-            MessageSegment.image(f"{_PATH_}/images/_rinfo_notfound.png")
-        )
+        await saa.Image(f"{_PATH_}/images/_rinfo_notfound.png").finish()
     if rCode != 0:
-        await ImgHeroRank.finish(
-            MessageSegment.text(f"返回状态码 {rCode}\n信息: {rMsg}")
-        )
+        await saa.Text(f"返回状态码 {rCode}\n信息: {rMsg}").finish()

@@ -4,14 +4,9 @@ from nonebot import on_command, require
 from nonebot.adapters import Message
 from nonebot.params import CommandArg
 from ..render.draw_hinfo import _d_hinfo
-from nonebot.adapters.onebot.v11 import MessageSegment
 
 require("nonebot_plugin_saa")
 import nonebot_plugin_saa as saa
-
-
-from PIL import Image
-from io import BytesIO
 
 API = LOLAPI()
 
@@ -28,14 +23,10 @@ async def heroInfo_handle(Initial: Message = CommandArg()):
 
     if rCode == 0:
         rImg = await _d_hinfo(rDict)
-        img = Image.open(BytesIO(rImg))
-        img.show()
         await saa.Image(rImg).finish()
     if rCode == 401:
-        await ImgHeroInfo.finish(MessageSegment.text(f"API 请求错误\n{rDict}"))
+        await saa.Text(f"API 请求错误\n{rDict}").finish()
     if rCode == 404:
-        await saa.Image(f"{_PATH_}/templates/images/_rinfo_notfound.png").finish()
+        await saa.Image(f"{_PATH_}/templates/images/_hinfo_notfound.png").finish()
     if rCode != 0:
-        await ImgHeroInfo.finish(
-            MessageSegment.text(f"返回状态码 {rCode}\n信息: {rMsg}")
-        )
+        await saa.Text(f"返回状态码 {rCode}\n信息: {rMsg}").finish()

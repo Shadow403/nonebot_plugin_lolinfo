@@ -1,5 +1,5 @@
 from nonebot import logger
-from nonebot.plugin import PluginMetadata
+from nonebot.plugin import PluginMetadata,inherit_supported_adapters
 from .config import PluginConfig, _PLUGINVER_
 
 __plugin_meta__ = PluginMetadata(
@@ -8,7 +8,7 @@ __plugin_meta__ = PluginMetadata(
     usage="https://github.com/Shadow403/nonebot_plugin_lolinfo",
     type="application",
     homepage="https://github.com/Shadow403/nonebot_plugin_lolinfo",
-    supported_adapters={"~onebot.v11"},
+    supported_adapters=inherit_supported_adapters("nonebot_plugin_saa"),
     config=PluginConfig,
     extra={},
 )
