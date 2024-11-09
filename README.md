@@ -61,7 +61,7 @@ nb plugin install nonebot-plugin-lolinfo
 
 ## 🍺 感谢
 - 图片制作 [`nonebot-plugin-htmlrender`](https://github.com/kexue-z/nonebot-plugin-htmlrender)
-
+- Jinja2 模板支持 [`PR#7`](https://github.com/Shadow403/nonebot_plugin_lolinfo/pull/7)
 <br>
 
 <details>
@@ -75,4 +75,4 @@ nb plugin install nonebot-plugin-lolinfo
 - `v0.2.3` 更新 `PluginConfig` | 添加异步处理 `httpx.AsyncClient`
 - `v0.2.4` 修复 `util_urlpath.py` 更新 `PluginConfig` | 添加超时配置 `httpx.timeout`
 - `v0.2.5` 修复🐛 `SyntaxError` [`#2`](https://github.com/Shadow403/nonebot_plugin_lolinfo/issues/2)
-- `v0.3.0` 修复🐛 [`#4`](https://github.com/Shadow403/nonebot_plugin_lolinfo/issues/4) [`#6`](https://github.com/Shadow403/nonebot_plugin_lolinfo/issues/6) | 更新API链接🔗
+- `v0.3.0` 修复🐛 [`#4`](https://github.com/Shadow403/nonebot_plugin_lolinfo/issues/4) [`#6`](https://github.com/Shadow403/nonebot_plugin_lolinfo/issues/6) | 更新API链接🔗 | 支持Jinja2 模板渲染
