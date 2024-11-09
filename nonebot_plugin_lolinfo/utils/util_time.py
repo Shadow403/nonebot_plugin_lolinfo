@@ -1,12 +1,13 @@
 import time
 from datetime import datetime
 
+
 def Func_nowtime(
-        info: bool = False,
-        timestamp: bool = False,
-        timestamp_str: bool = False,
-        formate: str = "%Y-%m-%d %H:%M:%S"
-    ):
+    info: bool = False,
+    timestamp: bool = False,
+    timestamp_str: bool = False,
+    formate: str = "%Y-%m-%d %H:%M:%S",
+):
     """
     **info (信息样式)**
         - `%Y-%m-%d %H:%M:%S [UTC+8]` | `str`
@@ -18,18 +19,18 @@ def Func_nowtime(
         - `%Y-%m-%d %H:%M:%S` | `str`
     """
 
-    if timestamp == True:
+    if timestamp:
         ts = int(time.time())
         return ts
 
-    if timestamp_str == True:
+    if timestamp_str:
         ts = str(int(time.time()))
         return ts
 
     now = datetime.now()
     formatTime = now.strftime(formate)
 
-    if info == True:
+    if info:
         formatTime += " [UTC+8]"
 
     return formatTime

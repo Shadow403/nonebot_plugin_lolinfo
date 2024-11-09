@@ -1,8 +1,9 @@
-from .utils import *
 from .controllers import *
-from nonebot import logger
-from nonebot.plugin import PluginMetadata
-from .config import PluginConfig, config, _PLUGINVER_
+from nonebot import logger,require
+from .config import PluginConfig, _PLUGINVER_
+from nonebot.plugin import PluginMetadata,inherit_supported_adapters
+
+require("nonebot_plugin_saa")
 
 __plugin_meta__ = PluginMetadata(
     name="lolinfo",
@@ -10,7 +11,7 @@ __plugin_meta__ = PluginMetadata(
     usage="https://github.com/Shadow403/nonebot_plugin_lolinfo",
     type="application",
     homepage="https://github.com/Shadow403/nonebot_plugin_lolinfo",
-    supported_adapters={"~onebot.v11"},
+    supported_adapters=inherit_supported_adapters("nonebot_plugin_saa"),
     config=PluginConfig,
     extra={},
 )

@@ -24,6 +24,8 @@ body {
 }
 
 .header img {
+    margin-top: 2%;
+    margin-left: 10px;
     width: 125%;
     height: auto;
     border-radius: 10px;
@@ -31,8 +33,8 @@ body {
 
 .hid {
     position: absolute;
-    bottom: 110px;
-    left: 10px;
+    bottom: 120px;
+    left: 15px;
     font-size: 1em;
     color: #ffcc00;
     background-color: rgba(0, 0, 0, 0.5);
@@ -43,7 +45,7 @@ body {
 .timestamp {
     position: absolute;
     bottom: 10px;
-    left: 10px;
+    left: 15px;
     font-size: 1em;
     color: #00d9ffd4;
     background-color: rgba(0, 0, 0, 0.5);
@@ -114,10 +116,10 @@ body {
 }
 
 .footer {
-    padding-left: 120px;
-    margin-top: 20px;
+    padding-left: 140px;
+    margin-bottom: 20px;
     color: #777;
-    font-size: 0.9em;
+    font-size: 1em;
     text-align: center;
 }
 
