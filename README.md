@@ -75,3 +75,4 @@ nb plugin install nonebot-plugin-lolinfo
 - `v0.2.3` 更新 `PluginConfig` | 添加异步处理 `httpx.AsyncClient`
 - `v0.2.4` 修复 `util_urlpath.py` 更新 `PluginConfig` | 添加超时配置 `httpx.timeout`
 - `v0.2.5` 修复🐛 `SyntaxError` [`#2`](https://github.com/Shadow403/nonebot_plugin_lolinfo/issues/2)
+- `v0.3.0` 修复🐛 [`#4`](https://github.com/Shadow403/nonebot_plugin_lolinfo/issues/4) [`#6`](https://github.com/Shadow403/nonebot_plugin_lolinfo/issues/6) | 更新API链接🔗
