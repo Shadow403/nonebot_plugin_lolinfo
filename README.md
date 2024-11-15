@@ -44,9 +44,11 @@ nb plugin install nonebot-plugin-lolinfo
 
 <details>
 <summary> 使用包管理工具 </summary>
+
 ```python
 pip install nonebot-plugin-lolinfo
 ```
+
 </details>
 
 ## 🎁 使用
