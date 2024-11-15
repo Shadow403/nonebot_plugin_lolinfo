@@ -1,4 +1,4 @@
-from .api import LOLAPI
+from .api import API
 from ..config import _PATH_
 from nonebot.adapters import Message
 from nonebot.params import CommandArg
@@ -7,8 +7,6 @@ from ..render.draw_hinfo import _d_hinfo
 
 require("nonebot_plugin_saa")
 import nonebot_plugin_saa as saa
-
-API = LOLAPI()
 
 ImgHeroInfo = on_command("hinfo", aliases={"英雄信息"}, block=True, priority=1)
 

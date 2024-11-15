@@ -1,4 +1,4 @@
-from .api import LOLAPI
+from .api import API
 from ..config import _PATH_
 from nonebot.adapters import Message
 from nonebot.params import CommandArg
@@ -7,8 +7,6 @@ from ..render.draw_rinfo import _d_rinfo
 
 require("nonebot_plugin_saa")
 import nonebot_plugin_saa as saa
-
-API = LOLAPI()
 
 ImgHeroRank = on_command("rinfo", aliases={"英雄排位"}, block=True, priority=1)
 
