@@ -84,3 +84,4 @@ pip install nonebot-plugin-lolinfo
 - `v0.2.5` 修复🐛 `SyntaxError` [`#2`](https://github.com/Shadow403/nonebot_plugin_lolinfo/issues/2)
 - `v0.3.0` 修复🐛 [`#4`](https://github.com/Shadow403/nonebot_plugin_lolinfo/issues/4) [`#6`](https://github.com/Shadow403/nonebot_plugin_lolinfo/issues/6) | 更新API链接🔗 | 支持Jinja2 模板渲染
 - `v0.3.1` 添加 API🔗 变动支持
+- `v0.3.2` 修复🐛 [`#8 f-string`](https://github.com/Shadow403/nonebot_plugin_lolinfo/issues/8)
