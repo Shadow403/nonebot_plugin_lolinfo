@@ -29,22 +29,25 @@ _✨ 基于 [NoneBot2](https://github.com/nonebot/nonebot2) & [ShadowAPI](https:
 <details>
 <summary> 展开 </summary>
 
-`/hinfo 塞拉斯`
-![](preview/塞拉斯_信息.png)
-
-`/rinfo 塞拉斯 上`
-![](preview/塞拉斯_排位.png)
+<table><tr>
+<td><img src=preview/塞拉斯_信息.png border=0></td>
+<td><img src=preview/塞拉斯_排位.png border=0></td>
+</tr></table>
 
 </details>
 
 ## 💿 安装
-```python
-pip install nonebot-plugin-lolinfo
-```
 
 ```python
 nb plugin install nonebot-plugin-lolinfo
 ```
+
+<details>
+<summary> 使用包管理工具 </summary>
+```python
+pip install nonebot-plugin-lolinfo
+```
+</details>
 
 ## 🎁 使用
 `Tips:  支持模糊搜索 🔍`
@@ -54,7 +57,7 @@ nb plugin install nonebot-plugin-lolinfo
 ## 🛠️ 配置
 |配置名|数据类型|默认值|
 |-------------------|------|------------------------------------------------|
-|`lol_api_url`      |`str` |`https://api-dev.shadow403.cn/api/lol`          |
+|`lol_api_url`      |`str` |`https://shadow403.github.io/nonebot_plugin_lolinfo/urls.json`          |
 |`lol_img_url`      |`str` |`https://game.gtimg.cn/images/lol/act/img/item` |
 |`lol_httpx_headers`|`dict`|`{"User-Agent": "nonebot_plugin_lolinfo"}`      |
 |`lol_httpx_timeout`|`int` |`40`                                            |
@@ -76,3 +79,4 @@ nb plugin install nonebot-plugin-lolinfo
 - `v0.2.4` 修复 `util_urlpath.py` 更新 `PluginConfig` | 添加超时配置 `httpx.timeout`
 - `v0.2.5` 修复🐛 `SyntaxError` [`#2`](https://github.com/Shadow403/nonebot_plugin_lolinfo/issues/2)
 - `v0.3.0` 修复🐛 [`#4`](https://github.com/Shadow403/nonebot_plugin_lolinfo/issues/4) [`#6`](https://github.com/Shadow403/nonebot_plugin_lolinfo/issues/6) | 更新API链接🔗 | 支持Jinja2 模板渲染
+- `v0.3.1` 添加 API🔗 变动支持
