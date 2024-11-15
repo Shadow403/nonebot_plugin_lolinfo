@@ -42,6 +42,8 @@ _✨ 基于 [NoneBot2](https://github.com/nonebot/nonebot2) & [ShadowAPI](https:
 nb plugin install nonebot-plugin-lolinfo
 ```
 
+</details>
+
 <details>
 <summary> 使用包管理工具 </summary>
 
