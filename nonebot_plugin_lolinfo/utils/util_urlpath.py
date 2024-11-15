@@ -27,10 +27,10 @@ async def _f_parse_rune(data: dict, rOrg: dict):
     _url0 = []
     _url1 = []
     _rune_list1 = data["RUNE_DEATIL_LIST"]["1"]["1"]["perk"].split("&")
-    _rune_list2 = data["RUNE_DEATIL_LIST"]["2"]["1"]["perk"].split("&")
+    _rune_list2 = data["RUNE_DEATIL_LIST"]["1"]["1"]["perk"].split("&")
     _rune_list = _rune_list1 + _rune_list2
     for v0 in _rune_list:
-        v1 = f"{config.lol_html_str}{rOrg["runelist"]["rune"][v0]["icon"]}{config.lol_html_end}"
+        v1 = f"{config.lol_html_str}{rOrg['runelist']['rune'][v0]['icon']}{config.lol_html_end}"
         _url0.append(v1)
     for i in range(0, len(_url0), 9):
         v2 = ""
@@ -49,7 +49,7 @@ async def _f_parse_spell(data: dict, rOrg: dict):
     for i0 in range(_len):
         v0 = _spell_list[str(i0 + 1)]["spellid"].split("&")
         for v1 in v0:
-            v0 = f"{config.lol_html_str}{rOrg["sumskill"]["summonerskill"][v1]["icon"]}{config.lol_html_end}"
+            v0 = f"{config.lol_html_str}{rOrg['sumskill']['summonerskill'][v1]['icon']}{config.lol_html_end}"
             _url0.append(v0)
     for i in range(0, len(_url0), 2):
         v2 = ""
