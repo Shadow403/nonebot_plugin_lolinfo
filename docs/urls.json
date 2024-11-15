@@ -1,4 +1,5 @@
 {
+    "version": "0.3.1",
     "root": "https://api-dev.shadow403.cn/api/lol",
     "paths": {
         "hero_info": "v1/hero_info",
