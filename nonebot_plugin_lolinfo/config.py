@@ -2,7 +2,7 @@ import os
 from pydantic import BaseModel
 from nonebot import get_plugin_config
 
-_PLUGINVER_: str = "0.3.1"
+_PLUGINVER_: str = "0.3.2"
 _PATH_: str = os.path.dirname(__file__)
 _TEMPLATES_PATH_: str = f"{_PATH_}/templates"
 
