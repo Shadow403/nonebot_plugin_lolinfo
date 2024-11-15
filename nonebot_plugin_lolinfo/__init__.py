@@ -1,7 +1,7 @@
 from .controllers import *
-from nonebot import logger,require
-from .config import PluginConfig, _PLUGINVER_
-from nonebot.plugin import PluginMetadata,inherit_supported_adapters
+from nonebot import require
+from .config import PluginConfig
+from nonebot.plugin import PluginMetadata, inherit_supported_adapters
 
 require("nonebot_plugin_saa")
 
@@ -15,5 +15,3 @@ __plugin_meta__ = PluginMetadata(
     config=PluginConfig,
     extra={},
 )
-
-logger.info(f"当前版本 {_PLUGINVER_}")
