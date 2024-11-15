@@ -1,0 +1,15 @@
+{
+    "root": "https://api-dev.shadow403.cn/api/lol",
+    "path": {
+        "hero_info": "v1/hero_info",
+        "hero_rank": "v1/hero_rank",
+        "equip_info": "v1/equip_info",
+        "originlist": "v1/originlist"
+    },
+    "parm": {
+        "hero_info": "?min=",
+        "hero_rank": "?posi=",
+        "equip_info": "",
+        "originlist": ""
+    }
+}
