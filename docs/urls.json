@@ -1,6 +1,6 @@
 {
     "version": "0.3.2",
-    "root": "https://api-dev.shadow403.cn/api/lol",
+    "root": "https://api-dev.shadow403.com.cn/api/lol",
     "paths": {
         "hero_info": "v1/hero_info",
         "hero_rank": "v1/hero_rank",
