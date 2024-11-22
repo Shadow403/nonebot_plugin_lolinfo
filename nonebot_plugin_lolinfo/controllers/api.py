@@ -31,7 +31,7 @@ class LOLAPI:
     async def _get_Hinfo(self, HName: str):
         path = "hero_info"
         try:
-            rURL = f"{self.root}/{self.paths[path]}/{HName}{self.parms[path]}true"
+            rURL = f"{self.root}/{self.paths[path]}/{HName}{self.parms["v2"][path]}"
             logger.info(f"开始获取数据 {rURL}")
             rDict = (await AsyncClient.get(rURL)).json()
             logger.success(f"获取数据成功 {rURL}")

@@ -1,5 +1,5 @@
 {
-    "version": "0.3.2",
+    "version": "0.3.3",
     "root": "https://api-dev.shadow403.com.cn/api/lol",
     "paths": {
         "hero_info": "v1/hero_info",
@@ -11,6 +11,13 @@
         "hero_info": "?min=",
         "hero_rank": "?posi=",
         "equip_info": "",
-        "originlist": ""
+        "originlist": "",
+
+        "v2": {
+            "hero_info": "?min=true",
+            "hero_rank": "?posi=",
+            "equip_info": "",
+            "originlist": ""
+        }
     }
 }
