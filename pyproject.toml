@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "nonebot-plugin-lolinfo"
-version = "0.3.2"
+version = "0.3.3"
 description = "以图片形式将LOL的各种数据发送到QQ中 🎉"
 authors = ["Shadow403"]
 license = "MIT"
